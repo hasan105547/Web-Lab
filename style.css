@@ -1,0 +1,132 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --green:  #2e7d32;
+    --light:  #e8f5e9;
+    --accent: #ff8f00;
+    --text:   #1a1a1a;
+    --gray:   #666;
+    --white:  #ffffff;
+    --shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: #f4f6f4;
+    color: var(--text);
+}
+
+/* HEADER */
+header { background: var(--green); color: white; padding: 14px 20px; box-shadow: var(--shadow); }
+.header-inner { max-width: 1100px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon { font-size: 2rem; }
+.logo h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+.logo p  { font-size: 0.8rem; opacity: 0.85; }
+
+.btn-upload-toggle {
+    background: var(--accent); color: white; border: none;
+    padding: 9px 18px; border-radius: 6px; font-size: 0.95rem;
+    cursor: pointer; font-family: 'Hind Siliguri', sans-serif;
+    transition: background 0.2s;
+}
+.btn-upload-toggle:hover { background: #e65100; }
+
+/* CONTAINER */
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+
+/* UPLOAD SECTION */
+.upload-section { background: var(--light); border-bottom: 2px solid #c8e6c9; padding: 20px; }
+.upload-section h2 { margin-bottom: 16px; color: var(--green); }
+
+.form-row { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.form-row input, .form-row select {
+    flex: 1; padding: 9px 12px; border: 1px solid #ccc;
+    border-radius: 6px; font-family: 'Hind Siliguri', sans-serif;
+    font-size: 0.95rem; min-width: 180px; outline: none;
+    transition: border-color 0.2s;
+}
+.form-row input:focus, .form-row select:focus { border-color: var(--green); }
+.form-row input[type="file"] { padding: 6px 10px; background: white; }
+
+.btn-submit {
+    background: var(--green); color: white; border: none;
+    padding: 10px 28px; border-radius: 6px; cursor: pointer;
+    font-size: 0.95rem; font-family: 'Hind Siliguri', sans-serif;
+    font-weight: 600; transition: background 0.2s;
+}
+.btn-submit:hover { background: #1b5e20; }
+
+.alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; font-weight: 600; }
+.alert.success { background: #c8e6c9; color: #2e7d32; }
+.alert.error   { background: #ffcdd2; color: #c62828; }
+
+/* SEARCH */
+.search-bar { margin: 16px 0; }
+.search-bar form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.search-bar input, .search-bar select {
+    padding: 9px 14px; border: 1px solid #ccc; border-radius: 6px;
+    font-family: 'Hind Siliguri', sans-serif; font-size: 0.95rem; outline: none;
+}
+.search-bar input { flex: 1; min-width: 200px; }
+.search-bar button {
+    background: var(--green); color: white; border: none;
+    padding: 9px 18px; border-radius: 6px; cursor: pointer;
+    font-family: 'Hind Siliguri', sans-serif; font-weight: 600;
+}
+.btn-clear { color: var(--gray); text-decoration: none; font-size: 0.9rem; }
+.btn-clear:hover { color: #c62828; }
+
+/* GRID */
+.books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.empty { grid-column: 1/-1; text-align: center; padding: 50px; color: var(--gray); font-size: 1.1rem; }
+
+/* BOOK CARD */
+.book-card {
+    background: var(--white); border-radius: 10px; padding: 16px;
+    box-shadow: var(--shadow); transition: transform 0.2s;
+}
+.book-card:hover { transform: translateY(-3px); }
+
+.book-type {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; margin-bottom: 10px;
+}
+.book-type.book { background: #e3f2fd; color: #1565c0; }
+.book-type.note { background: #fff3e0; color: #e65100; }
+.file-ext {
+    background: rgba(0,0,0,0.1); padding: 1px 5px;
+    border-radius: 3px; font-size: 0.7rem;
+}
+
+.book-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); line-height: 1.4; }
+.book-card .subject,
+.book-card .uploader,
+.book-card .date { font-size: 0.83rem; color: var(--gray); margin-bottom: 4px; }
+
+.card-actions { margin-top: 12px; display: flex; gap: 8px; align-items: center; }
+.btn-download {
+    flex: 1; background: var(--green); color: white; text-decoration: none;
+    text-align: center; padding: 7px; border-radius: 6px; font-size: 0.88rem;
+    transition: background 0.2s;
+}
+.btn-download:hover { background: #1b5e20; }
+.btn-delete {
+    color: #e53935; text-decoration: none; font-size: 1.1rem;
+    padding: 5px 8px; border-radius: 6px; background: #ffebee;
+    transition: background 0.2s;
+}
+.btn-delete:hover { background: #ffcdd2; }
+
+/* FOOTER */
+footer {
+    text-align: center; padding: 20px; color: var(--gray);
+    font-size: 0.85rem; margin-top: 30px; border-top: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+    .header-inner { flex-direction: column; gap: 10px; text-align: center; }
+    .form-row { flex-direction: column; }
+    .books-grid { grid-template-columns: 1fr; }
+}
